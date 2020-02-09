@@ -15,4 +15,7 @@ func main() {
 	debugger := debug.NewDebugger("debug")
 	debugger.Log("debug messsage!")
 	debugger.Log("second debug messsage!")
+	p := canvas.At(11, 11)
+
+	debugger.Log(fmt.Sprintf("p! : %v", p))
 }
