@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"image"
 
 	"github.com/nna774/mado/go/canvas"
 	"github.com/nna774/mado/go/debug"
@@ -15,7 +16,10 @@ func main() {
 	debugger := debug.NewDebugger("debug")
 	debugger.Log("debug messsage!")
 	debugger.Log("second debug messsage!")
-	p := canvas.At(11, 11)
 
+	var i image.Image
+	i = canvas
+
+	p := i.At(11, 11)
 	debugger.Log(fmt.Sprintf("p! : %v", p))
 }

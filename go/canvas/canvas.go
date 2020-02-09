@@ -54,17 +54,17 @@ func (c *Canvas) FillTestRect() {
 }
 
 // ColorModel is part of Image interface
-func (c *Canvas) ColorModel() color.Model {
+func (c Canvas) ColorModel() color.Model {
 	return color.NRGBAModel
 }
 
 // Bounds is part of Image interface
-func (c *Canvas) Bounds() image.Rectangle {
+func (c Canvas) Bounds() image.Rectangle {
 	return c.rectangle
 }
 
 // At is part of Image interface
-func (c *Canvas) At(x, y int) color.Color {
+func (c Canvas) At(x, y int) color.Color {
 	ctx := c.Context()
 	imageData := ctx.Call("getImageData", x, y, 1, 1)
 	data := imageData.Get("data")
