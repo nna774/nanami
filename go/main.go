@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"image"
+	"image/color"
+	"image/draw"
 
 	"github.com/nna774/mado/go/canvas"
 	"github.com/nna774/mado/go/debug"
@@ -22,4 +24,11 @@ func main() {
 
 	p := i.At(11, 11)
 	debugger.Log(fmt.Sprintf("p! : %v", p))
+
+	var d draw.Image
+	d = canvas
+
+	d.Set(15, 15, color.Black)
+	p = i.At(15, 15)
+	debugger.Log(fmt.Sprintf("p2! : %v", p))
 }

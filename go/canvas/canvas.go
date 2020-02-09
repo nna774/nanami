@@ -74,3 +74,16 @@ func (c Canvas) At(x, y int) color.Color {
 	a := uint8(data.Index(3).Int())
 	return color.RGBA{r, g, b, a}
 }
+
+// Set is part of image/draw Image interface
+func (c Canvas) Set(x, y int, color color.Color) {
+	r, g, b, a := color.RGBA()
+	ctx := c.Context()
+	imageData := ctx.Call("createImageData", 1, 1)
+	data := imageData.Get("data")
+	data.SetIndex(0, r>>8)
+	data.SetIndex(1, g>>8)
+	data.SetIndex(2, b>>8)
+	data.SetIndex(3, a>>8)
+	ctx.Call("putImageData", imageData, x, y)
+}
