@@ -6,8 +6,8 @@ import (
 	"image/color"
 	"image/draw"
 
-	"github.com/nna774/mado/go/canvas"
-	"github.com/nna774/mado/go/debug"
+	"github.com/nna774/mado/pkg/canvas"
+	"github.com/nna774/mado/pkg/debug"
 )
 
 func main() {
